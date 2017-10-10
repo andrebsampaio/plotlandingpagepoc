@@ -1,0 +1,6 @@
+{
+    "publicToken": "PUBLIC_TOKEN",
+    "enableOnFirstRun": true,
+    "automaticallyAskLocationPermission": false,
+    "automaticallyAskNotificationPermission": false
+}

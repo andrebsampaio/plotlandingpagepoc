@@ -7,15 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		039009DDC95385D4C98E324F /* Pods_landingpagepoc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20A1A80D39B22E764B54214A /* Pods_landingpagepoc.framework */; };
 		F88ECF031F8CD658007DF5DC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F88ECF021F8CD658007DF5DC /* AppDelegate.m */; };
 		F88ECF061F8CD658007DF5DC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F88ECF051F8CD658007DF5DC /* ViewController.m */; };
 		F88ECF091F8CD658007DF5DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F88ECF071F8CD658007DF5DC /* Main.storyboard */; };
 		F88ECF0B1F8CD658007DF5DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F88ECF0A1F8CD658007DF5DC /* Assets.xcassets */; };
 		F88ECF0E1F8CD658007DF5DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F88ECF0C1F8CD658007DF5DC /* LaunchScreen.storyboard */; };
 		F88ECF111F8CD658007DF5DC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F88ECF101F8CD658007DF5DC /* main.m */; };
+		F892319D1F8CD99200202E19 /* plotconfig.json in Resources */ = {isa = PBXBuildFile; fileRef = F892319C1F8CD99200202E19 /* plotconfig.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		20A1A80D39B22E764B54214A /* Pods_landingpagepoc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_landingpagepoc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		531460B6D10A63D4AC159BD8 /* Pods-landingpagepoc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-landingpagepoc.debug.xcconfig"; path = "Pods/Target Support Files/Pods-landingpagepoc/Pods-landingpagepoc.debug.xcconfig"; sourceTree = "<group>"; };
+		C4CB56020AEDC5408D473FED /* Pods-landingpagepoc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-landingpagepoc.release.xcconfig"; path = "Pods/Target Support Files/Pods-landingpagepoc/Pods-landingpagepoc.release.xcconfig"; sourceTree = "<group>"; };
 		F88ECEFE1F8CD658007DF5DC /* landingpagepoc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = landingpagepoc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F88ECF011F8CD658007DF5DC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F88ECF021F8CD658007DF5DC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -26,6 +31,7 @@
 		F88ECF0D1F8CD658007DF5DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F88ECF0F1F8CD658007DF5DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F88ECF101F8CD658007DF5DC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F892319C1F8CD99200202E19 /* plotconfig.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = plotconfig.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +39,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				039009DDC95385D4C98E324F /* Pods_landingpagepoc.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AB9BCFD5B75A58DD3DD2660E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				531460B6D10A63D4AC159BD8 /* Pods-landingpagepoc.debug.xcconfig */,
+				C4CB56020AEDC5408D473FED /* Pods-landingpagepoc.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E74F181F3C741B9B8F7EDC54 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				20A1A80D39B22E764B54214A /* Pods_landingpagepoc.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F88ECEF51F8CD658007DF5DC = {
 			isa = PBXGroup;
 			children = (
 				F88ECF001F8CD658007DF5DC /* landingpagepoc */,
 				F88ECEFF1F8CD658007DF5DC /* Products */,
+				AB9BCFD5B75A58DD3DD2660E /* Pods */,
+				E74F181F3C741B9B8F7EDC54 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +84,7 @@
 		F88ECF001F8CD658007DF5DC /* landingpagepoc */ = {
 			isa = PBXGroup;
 			children = (
+				F892319C1F8CD99200202E19 /* plotconfig.json */,
 				F88ECF011F8CD658007DF5DC /* AppDelegate.h */,
 				F88ECF021F8CD658007DF5DC /* AppDelegate.m */,
 				F88ECF041F8CD658007DF5DC /* ViewController.h */,
@@ -78,9 +105,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F88ECF141F8CD658007DF5DC /* Build configuration list for PBXNativeTarget "landingpagepoc" */;
 			buildPhases = (
+				F7C0762E3692067D0B2693AF /* [CP] Check Pods Manifest.lock */,
 				F88ECEFA1F8CD658007DF5DC /* Sources */,
 				F88ECEFB1F8CD658007DF5DC /* Frameworks */,
 				F88ECEFC1F8CD658007DF5DC /* Resources */,
+				853134E2A65F0E1EB391D3C4 /* [CP] Embed Pods Frameworks */,
+				812B7D701EE0BDCD1CA13058 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -129,6 +159,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F892319D1F8CD99200202E19 /* plotconfig.json in Resources */,
 				F88ECF0E1F8CD658007DF5DC /* LaunchScreen.storyboard in Resources */,
 				F88ECF0B1F8CD658007DF5DC /* Assets.xcassets in Resources */,
 				F88ECF091F8CD658007DF5DC /* Main.storyboard in Resources */,
@@ -136,6 +167,60 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		812B7D701EE0BDCD1CA13058 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-landingpagepoc/Pods-landingpagepoc-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		853134E2A65F0E1EB391D3C4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-landingpagepoc/Pods-landingpagepoc-frameworks.sh",
+				"${PODS_ROOT}/PlotPlugin/PlotProjects-v1_17_0/PlotProjects.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PlotProjects.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-landingpagepoc/Pods-landingpagepoc-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F7C0762E3692067D0B2693AF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-landingpagepoc-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F88ECEFA1F8CD658007DF5DC /* Sources */ = {
@@ -276,11 +361,13 @@
 		};
 		F88ECF151F8CD658007DF5DC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 531460B6D10A63D4AC159BD8 /* Pods-landingpagepoc.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7CC5LNPAQ6;
 				INFOPLIST_FILE = landingpagepoc/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = plotprojects.landingpagepoc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -290,11 +377,13 @@
 		};
 		F88ECF161F8CD658007DF5DC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C4CB56020AEDC5408D473FED /* Pods-landingpagepoc.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7CC5LNPAQ6;
 				INFOPLIST_FILE = landingpagepoc/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = plotprojects.landingpagepoc;
 				PRODUCT_NAME = "$(TARGET_NAME)";

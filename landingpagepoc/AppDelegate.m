@@ -2,24 +2,35 @@
 //  AppDelegate.m
 //  landingpagepoc
 //
-//  Created by Andre Sampaio on 10/10/2017.
-//  Copyright © 2017 Andre Sampaio. All rights reserved.
-//
 
 #import "AppDelegate.h"
+#import <MapKit/MapKit.h>
+
 
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
-
-
+    
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    [self initLocationManager];
+    //initializes the Plot library:
+    [Plot initializeWithLaunchOptions:launchOptions delegate:self];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [NSThread sleepForTimeInterval:5.0f]; // Wait until some geotriggers are loaded
+        [self checkForLandingPage];
+    });
     return YES;
 }
-
+    
+-(void) initLocationManager{
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.distanceFilter = kCLDistanceFilterNone;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    [self.locationManager requestWhenInUseAuthorization];
+    [self.locationManager startUpdatingLocation];
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -32,9 +43,34 @@
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
 
-
+- (void)checkForLandingPage{
+    NSArray<PlotGeotrigger *> *geotriggers = [Plot loadedGeotriggers];
+    PlotGeotrigger* closestGeotrigger = nil;
+    double closestDistance = DBL_MAX;
+    for (PlotGeotrigger* geotrigger in geotriggers){
+        double lat = [[[geotrigger userInfo]objectForKey:PlotGeotriggerGeofenceLatitude] doubleValue];
+        double lon = [[[geotrigger userInfo]objectForKey:PlotGeotriggerGeofenceLongitude] doubleValue];
+        CLLocation *startLocation = [[CLLocation alloc] initWithLatitude:lat longitude:lon];
+        CLLocation *endLocation = [[CLLocation alloc] initWithLatitude:self.locationManager.location.coordinate.latitude
+                                                             longitude:self.locationManager.location.coordinate.longitude];
+        CLLocationDistance distance = [startLocation distanceFromLocation:endLocation];
+        if (distance < [[[geotrigger userInfo]objectForKey:PlotGeotriggerMatchRange] doubleValue]){
+            if (closestDistance > distance){
+                closestGeotrigger = geotrigger;
+            }
+        }
+    }
+    if (closestGeotrigger){
+        NSURL *url = [NSURL URLWithString:[[closestGeotrigger userInfo]objectForKey:PlotGeotriggerDataKey]];
+        UIApplication *application = [UIApplication sharedApplication];
+        [application openURL:url options:@{} completionHandler:nil];
+    }
+}
+    
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [self checkForLandingPage];
+    });
 }
 
 
